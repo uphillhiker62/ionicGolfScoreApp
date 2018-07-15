@@ -3,16 +3,41 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Choose A Course</ion-title>
+    <ion-title>Welcome!</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>See courses</h3>
+  <h3>Select your course, tee and players to create your Golf Card</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <!-- <button [routerLink]="['/golf-card']">Create Game</button>   -->
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!-- <button ion-button secondary (click)="courseSelect()">C</button> -->
+  <ion-item>
+    <ion-label>Choose Course</ion-label>
+    <ion-select [(ngModel)]="courseId">
+      <ion-option>Fox Hollow</ion-option>
+      <ion-option>Thanksgiving Point</ion-option>
+      <ion-option>Spanish Oaks</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Choose Tee</ion-label>
+    <ion-select [(ngModel)]="tee">
+      <ion-option>Pro</ion-option>
+      <ion-option>Champion</ion-option>
+      <ion-option>Men</ion-option>
+      <ion-option>Women</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select Player Amount</ion-label>
+    <ion-select [(ngModel)]="players" multiple="true">
+      <ion-option>1</ion-option>
+      <ion-option>2</ion-option>
+      <ion-option>3</ion-option>
+      <ion-option>4</ion-option>
+      <ion-option>5</ion-option>
+    </ion-select>
+  </ion-item>
 </ion-content>

@@ -1,12 +1,6 @@
+import { CoursesApiService } from './../../providers/courses-api/courses-api.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AllCoursesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AllCoursesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  selectedCourse: any;
+  private courseOptions: Array<{name: string, image: string, id: number}>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public courseAPI: CoursesApiService) {
+    this.selectedCourse = navParams.get('item');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AllCoursesPage');
+    this.courseAPI.findCourses().subscribe(data => {this.courseOptions = data.courseOptions});
+    console.log(this.courseOptions);
   }
 
 }
