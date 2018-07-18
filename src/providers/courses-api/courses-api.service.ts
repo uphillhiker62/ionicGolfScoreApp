@@ -14,7 +14,7 @@ export class CoursesApiService {
 
   constructor(public http: HttpClient) {}
 
-  private API = 'https://www.uxcobra.com/golfapi/course';
+  private API = 'https://uxcobra.com/golfapi/course';
   private selecteCourse: any = {};
 
   findCourses(): Observable<any> {

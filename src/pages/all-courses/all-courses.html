@@ -5,14 +5,26 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Choose Your Course</ion-title>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Select Course</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <button *ngFor="let course of courseOptions" (click)="chosenCourse($event, course)" class="courseDetail">
+      <div class="topDiv">
+        <div class="topLeft">{{course.name}}</div>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </div>
+      <img class="courseImg" [src]="course.image">
+      <!-- <div class="item-note" item-end>{{course.id}}</div> -->
+      <!-- use div above if below doesn't work -->
+      <div class="hideId">{{course.id}}</div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedCourse" padding>{{selectedCourse.title}}</div>
 </ion-content>

@@ -11,7 +11,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { AllCoursesPage } from './../pages/all-courses/all-courses';
 import { AllTeesPage } from '../pages/all-tees/all-tees';
 import { PlayersPage } from '../pages/players/players';
@@ -27,7 +26,6 @@ import {HttpClientModule} from "@angular/common/http";
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     AllCoursesPage,
     AllTeesPage,
     PlayersPage,
@@ -46,7 +44,6 @@ import {HttpClientModule} from "@angular/common/http";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     AllCoursesPage,
     AllTeesPage,
     PlayersPage,

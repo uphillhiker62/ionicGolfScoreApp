@@ -8,12 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Select your course, tee and players to create your Golf Card</h3>
+  <span>
+    <button ion-button full (click)="courseSelect()">Start New Game</button>
+    <button ion-button full>See Scoreboard</button>
+  </span>
 
   <!-- <button [routerLink]="['/golf-card']">Create Game</button>   -->
 
   <!-- <button ion-button secondary (click)="courseSelect()">C</button> -->
-  <ion-item>
+  <!-- <ion-item>
     <ion-label>Choose Course</ion-label>
     <ion-select [(ngModel)]="courseId">
       <ion-option>Fox Hollow</ion-option>
@@ -39,5 +42,5 @@
       <ion-option>4</ion-option>
       <ion-option>5</ion-option>
     </ion-select>
-  </ion-item>
+  </ion-item> -->
 </ion-content>
