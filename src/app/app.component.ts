@@ -1,13 +1,13 @@
-import { GolfCardPage } from './../pages/golf-card/golf-card';
-import { PlayersPage } from './../pages/players/players';
-import { AllTeesPage } from './../pages/all-tees/all-tees';
-import { AllCoursesPage } from './../pages/all-courses/all-courses';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { AllCoursesPage } from "../pages/all-courses/all-courses";
+import { AllTeesPage } from '../pages/all-tees/all-tees';
+import { PlayersPage } from "../pages/players/players";
+import { GolfCardPage } from "../pages/golf-card/golf-card";
 
 @Component({
   templateUrl: 'app.html'
@@ -25,16 +25,18 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Courses', component: AllCoursesPage },
-      { title: 'Tees', component: AllTeesPage },
-      { title: 'Players', component: PlayersPage },
-      { title: 'Golf Card', component: GolfCardPage }
+      { title: 'Courses', component: AllCoursesPage},
+      { title: 'Tees', component: AllTeesPage},
+      { title: 'Players', component: PlayersPage},
+      { title: 'Golf Card', component: GolfCardPage}
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

@@ -1,5 +1,5 @@
 <!--
-  Generated template for the PlayersPage page.
+  Generated template for the PlayerSelectPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>players</ion-title>
+    <ion-title>Choose Your Players</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-item>
+    <ion-input [(ngModel)]="numberValue"  (keyup)="logStuff($event)" placeholder="Choose Your Players"></ion-input>
+  </ion-item>
+  <button ion-button round (click)="selectNumberOfPlayers($event, this.navParams.data, numberValue)">Start Game</button>
 
 </ion-content>

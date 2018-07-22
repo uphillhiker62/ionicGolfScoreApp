@@ -1,6 +1,6 @@
-import { AllCoursesPage } from './../all-courses/all-courses';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AllCoursesPage } from "../all-courses/all-courses";
 
 @Component({
   selector: 'page-home',
@@ -12,9 +12,7 @@ export class HomePage {
 
   }
 
-  courseSelect() {
-    //push another page onto the history stack
-    //causing the nav controller to animate the new page in
+  courseSelect(){
     this.navCtrl.push(AllCoursesPage);
   }
 

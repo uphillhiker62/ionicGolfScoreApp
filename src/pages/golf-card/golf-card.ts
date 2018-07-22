@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {CoursesApiService} from "../../services/courses-api.service";
 
 /**
- * Generated class for the GolfCardPage page.
+ * Generated class for the ScoreCardPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -15,11 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GolfCardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  public params: any = {};
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GolfCardPage');
-  }
-
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public golfApi: CoursesApiService)
+  {}
 }

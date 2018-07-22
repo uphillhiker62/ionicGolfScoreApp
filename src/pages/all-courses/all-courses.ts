@@ -1,7 +1,15 @@
-import { AllTeesPage } from './../all-tees/all-tees';
-import { CoursesApiService } from './../../providers/courses-api/courses-api.service';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
+
+import { AllTeesPage } from '../all-tees/all-tees';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import {CoursesApiService} from "../../services/courses-api.service";
+
+/**
+ * Generated class for the CoursesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -10,21 +18,27 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 })
 export class AllCoursesPage {
 
-  selectedCourse: any;
-  private courseOptions: Array<{name: string, image: string, id: number}>;
+  selectedItem: any;
+  private courseOptions: Array<{ name: string, id: number, image: string }>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public courseAPI: CoursesApiService, public loader: LoadingController) {
-    this.selectedCourse = navParams.get('item');
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public API: CoursesApiService,
+    public loadingCtrl: LoadingController
+  ) {
+    this.selectedItem = navParams.get('item');
+    }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoursesPage');
 
-    const loader = this.loader.create({
-      content: "Loading local courses.."
+    const loader = this.loadingCtrl.create({
+      content: "Loading Local Courses.."
     });
     loader.present().then(() => {
-      this.courseAPI.findCourses().subscribe(data => {
+      this.API.findCourses().subscribe(data => {
         this.courseOptions = data.courses;
         loader.dismiss();
         console.log(this.courseOptions);
@@ -32,10 +46,9 @@ export class AllCoursesPage {
     });
   }
 
-  chosenCourse(event, courseId) {
+  courseChosen(event, courseId) {
     this.navCtrl.push(AllTeesPage, {
       courseId: courseId
     });
   }
-
 }

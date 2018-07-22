@@ -10,4 +10,4 @@ import { PlayersPage } from './players';
     IonicPageModule.forChild(PlayersPage),
   ],
 })
-export class PlayersPageModule {}
+export class PlayerSelectPageModule {}
