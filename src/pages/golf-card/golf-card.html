@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ScoreCardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,6 +8,89 @@
 
 <ion-content padding>
 
+  <div class="scoreCard">
+    <div class="left">
+
+      <div class="column">
+      <div id="rowTitleHoles" class="rowTitle"> Hole </div>
+      <div id="rowTitleYards" class="rowTitle"> {{this.tee}} Yards </div>
+      <div id="rowTitlePar" class="rowTitle"> {{this.tee}} Par </div>
+      <div id="rowTitleHCP" class="rowTitle"> {{this.tee}} HCP </div>
+      </div>
+
+      <div *ngFor="let player of pArray; index as i " id="playerRow" class="playerLabel player">
+          <div id="playerRow{{i}}" class="playerLabel player{{i}}">
+            <span class="playersName" contenteditable="true">{{player}}</span>
+            <span (click)="removePlayer(this)" class="fa fa-trash player{{i}}"></span>
+          </div>
+
+      </div>
+    </div>
+    <div class="right">
+      <div *ngFor="let hole of holesIn; index as i "  >
+
+        <div class="column" id="c{{i + 1}}">
+          <div class="cheader"> {{i + 1}}</div>
+          <div id="yards{{i + 1}}" class="yards">{{hole.teeBoxes[this.difficultyIndex].yards }}</div>
+          <div id="par{{i + 1}}" class="par">{{hole.teeBoxes[this.difficultyIndex].par}}</div>
+          <div id="hcp{{i + 1}}" class="hcp">{{hole.teeBoxes[this.difficultyIndex].hcp }}</div>
+          <div *ngFor="let playerInput of pArray; index as p">
+              <input type="number" class="holeInput player{{p}}" id="p{{p}}h{{i}}" (change)="addUpInputs()">
+          </div>
+        </div>
+
+      </div>
+
+      <div  class="column" id="totalIn">
+        <div class="totalsIN">IN</div>
+        <div id="yardsIn">{{totalYardsIn}}</div>
+        <div id="parIn">{{totalParIn}}</div>
+        <div id="hcpIn">{{totalHCPIn}}</div>
+
+
+        <div *ngFor="let p of pArray; index as i" class="scoreBox">
+          <div id="player{{i}}scoreIn"></div>
+        </div>
+
+      </div>
+
+      <div *ngFor="let hole of holesOut; index as i "  >
+        <div class="column" id="c{{i + 10}}">
+          <div class="cheader"> {{i + 10}}</div>
+          <div id="yards{{i + 10}}" class="yards">{{hole.teeBoxes[this.difficultyIndex].yards }}</div>
+          <div id="par{{i + 10}}" class="par">{{hole.teeBoxes[this.difficultyIndex].par}}</div>
+          <div id="hcp{{i + 10}}" class="hcp">{{hole.teeBoxes[this.difficultyIndex].hcp }}</div>
+          <div *ngFor="let playerInput of pArray; index as p">
+            <input type="number" class="holeInput player{{p}}" id="p{{p}}h{{i+ 10}}" (change)="addUpInputs()">
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="column" id="totalOut">
+        <div class="totals">OUT</div>
+        <div id="yardsOut">{{totalYardsOut}}</div>
+        <div id="parOut">{{totalParOut}}</div>
+        <div id="hcpOut">{{totalHCPOut}}</div>
+        <div *ngFor="let p of pArray; index as i" class="scoreBox">
+          <div id="player{{i}}scoreOut"></div>
+        </div>
+      </div>
+      <div class="column" id="totalScore">
+        <div class="totalsTot">TOT</div>
+        <div id="yardsTot">{{totalYardsIn + totalYardsOut}}</div>
+        <div id="parTot">{{totalParIn + totalParOut}}</div>
+        <div id="hcpTot">{{totalHCPIn + totalHCPOut}}</div>
+        <div *ngFor="let p of pArray; index as i" class="scoreBox">
+          <div id="player{{i}}totalScore"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 
 
 </ion-content>

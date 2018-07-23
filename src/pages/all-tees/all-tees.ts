@@ -20,6 +20,7 @@ export class AllTeesPage {
   public courseId: any;
   teeBoxDetails: any;
   tees: Array<object> = [];
+  Tees: Array<object> = [];
   boxTeesLength: number;
   indexOf: Array<object> = [];
 
@@ -33,7 +34,7 @@ export class AllTeesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DifficultyPage');
     this.courseId = this.navParams.data.courseId.id;
-    console.log('course ID #' + this.courseId);
+    console.log('course ' + this.courseId);
 
     this.API.returnCourseDetails(this.courseId).subscribe(data => {
       this.teeBoxDetails = data.data;
@@ -44,18 +45,15 @@ export class AllTeesPage {
         }
       }
       console.log(this.tees);
-
     });
-
   }
 
-  selectedDifficulty(event, courseId, tee){
+  teeChosen(event, courseId, tee){
     this.navCtrl.push(PlayersPage, {
       courseId: courseId,
       tee: tee
     });
   }
-
 }
 
 

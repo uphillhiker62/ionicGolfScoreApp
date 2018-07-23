@@ -7,21 +7,6 @@
   </ion-navbar>
 </ion-header>
 
-<!-- <ion-content>
-  <div class="homeDesign">
-    <ion-list>
-      <button ion-item *ngFor="let course of courseOptions" (click)="courseChosen($event, course)" class="courseDetail">
-      <img class="courseImg" [src]="course.image">{{course.name}}
-        <div class="hideId" item-end>{{course.id}}</div>
-        <div class="hideId" item-end>{{course.city}}</div> -->
-      <!-- </button>
-    </ion-list>
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
-  </div>
-</ion-content> -->
-
 <ion-content>
   <div class="coursesDesign">
     <ion-list class="courseDetail">
@@ -36,4 +21,4 @@
     </ion-list>
     <div *ngIf="selectedCourse" padding>{{selectedCourse.title}}</div>
   </div>
-  </ion-content>
+</ion-content>

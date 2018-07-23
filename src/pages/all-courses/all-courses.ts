@@ -21,15 +21,9 @@ export class AllCoursesPage {
   selectedItem: any;
   private courseOptions: Array<{ name: string, id: number, image: string }>;
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public API: CoursesApiService,
-    public loadingCtrl: LoadingController
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public API: CoursesApiService,public loadingCtrl: LoadingController) {
     this.selectedItem = navParams.get('item');
     }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoursesPage');
