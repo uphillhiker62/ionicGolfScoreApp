@@ -1,16 +1,16 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Choose Your Players</ion-title>
+    <ion-title>Choose Players (max 5)</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-item>
-    <ion-input [(ngModel)]="numberValue"  (keyup)="logStuff($event)" placeholder="Choose Your Players"></ion-input>
+<ion-content padding class="playersDesign">
+  <!-- <p>Enter Number of Players:</p> -->
+  <ion-item class="playerInput">
+    <ion-input [(ngModel)]="numberValue" (keyup)="showNumPlayers($event)" placeholder="Enter Number of Players"></ion-input>
   </ion-item>
-  <button ion-button round (click)="selectNumberOfPlayers($event, this.navParams.data, numberValue)">Start Game</button>
-
+  <button ion-button (click)="chosenPlayers($event, this.navParams.data, numberValue)" class="playersBtn">Play Course</button>
 </ion-content>

@@ -9,39 +9,29 @@ import { GolfCardPage } from "../golf-card/golf-card";
   selector: 'page-players',
   templateUrl: 'players.html',
 })
+
 export class PlayersPage {
 
   public params: any = {};
   public numberValue: number;
 
-
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public golfApi: CoursesApiService
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public coursesAPI: CoursesApiService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlayerSelectPage');
     this.params = this.navParams.data;
     console.log(this.params);
-
-
-
-
   }
 
-  logStuff(){
+  showNumPlayers(){
     console.log(this.numberValue);
   }
 
-  selectNumberOfPlayers(event, courseInfo, numberOfPlayers:number){
+  chosenPlayers(event, courseInfo, numberOfPlayers:number){
     this.navCtrl.push(GolfCardPage, {
       courseInfo: courseInfo,
       numberOfPlayers: numberOfPlayers
-
-
     });
   }
 

@@ -2,84 +2,135 @@
 // page-golf-card {
 // }
 
-.scoreCard{
-  width: 90%;
-  display: flex;
-  padding: 5px auto;
-  margin: 10px;
+// ion-content {
+//   padding: 0;
+// }
+
+.cardDesign {
+  background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
 }
 
-  
-.left{
-  width: 15%;
-  min-width: 160px;
-  box-sizing: border-box;
-}
-  
-.playerCol{
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  border: 1px solid black;
-  background: white;
-  opacity: .65;
+.scoreCard{
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
+  justify-content: center;
+  padding: 0;
+  // padding: 5px auto;
+  // margin: 2px;
 }
 
-.playerHeader{
+.topInfo {
+  display: flex;
+  width: 100%;
+}
+
+.holeInfo {
+  width: 27px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px 5px 15px;
   text-align: center;
 }
 
-.playerMain {
-  padding: 3px;
-  width: 100%;
+.row {
   display: flex;
   flex-direction: column;
 }
+
+.holeData {
+  display: flex;
+}
+
+  
+// .left{
+//   width: 10%;
+//   min-width: 160px;
+//   box-sizing: border-box;
+// }
+
+.rowTitle {
+  text-transform: uppercase;
+}
+
+ion-app.md [padding] .scroll-content {
+  padding: 4px;
+}
+
+// .cheader {
+//   display: flex;
+//   flex-direction: column;
+//   width: 68px;
+// }
+  
+// .playerCol{
+//   border-bottom-left-radius: 5px;
+//   border-top-left-radius: 5px;
+//   border: 1px solid black;
+//   background: white;
+//   opacity: .65;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .playerHeader{
+//   text-align: center;
+// }
+
+// .playerMain {
+//   padding: 3px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .playerLabel {
   box-sizing: border-box;
-  width: 100%;
-  margin: 3px 0;
   display: flex;
   justify-content: space-between;
+  border: 1px solid black; 
+  width: 48px;
 }
           
-.fa-trash{
-  margin-right: 5px;
-}
+// .fa-trash{
+//   margin-right: 5px;
+// }
     
-.right{
-  width: 85%;
-  display: flex;
-}
+// .right{
+//   width: 85%;
+//   display: flex;
+// }
 
-#totalScore{
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
+// #totalScore{
+//   border-top-right-radius: 5px;
+//   border-bottom-right-radius: 5px;
+// }
 
-.column{
+// .column{
+//   border: 1px solid black;
+//   text-align: center;
+//   background: white;
+//   opacity: .65;
+//   // display: flex;
+// }
+
+// .scoreBox{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin: 5px 0;
+// }
+
+// input{
+//   width: 40px;
+// }
+
+.holeInput{
   border: 1px solid black;
-  text-align: center;
-  background: white;
-  opacity: .65;
-}
-
-.scoreBox{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
-}
-
-input{
-  width: 40px;
-}
-
-holeInput{
-  border: 1px solid black;
+  width: 48px;
+  height: 60px;
 }

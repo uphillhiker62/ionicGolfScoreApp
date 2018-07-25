@@ -1,3 +1,23 @@
 // page-players {
 
 // }
+
+.playersDesign {
+    background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
+    display: flex;
+  }
+
+.playerInput {
+    width: 64%;
+    margin: 50px auto 10px auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 0px;
+}
+
+.playersBtn {
+    background-color: #5eaaef;
+    border: 1px solid #5daaef;
+    border-radius: 5px;
+    margin: 0 110px;
+}
