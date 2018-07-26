@@ -25,12 +25,35 @@
   width: 100%;
 }
 
-.holeInfo {
-  width: 27px;
-  border: 1px solid black;
+.holeInfoHeader {
+  width: 32px;
+  border: 1px solid dimgrey;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 9px;
+  text-align: center;
+}
+
+.holeInfo {
+  justify-content: center;
+  width: 32px;
+  border: 1px solid dimgrey;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -43,7 +66,28 @@
   display: flex;
 }
 
-  
+#totalInSection, #totalOutSection, #allTotalSection {
+  display: flex;
+  // background-color: #e8eaef;
+}
+
+.totalsIn, .totalsOut, .allTotals {
+  justify-content: center;
+  width: 32px;
+  border: 1px solid dimgrey;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+
+
 // .left{
 //   width: 10%;
 //   min-width: 160px;
@@ -92,8 +136,11 @@ ion-app.md [padding] .scroll-content {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  border: 1px solid black; 
+  border: 1px solid dimgrey; 
   width: 48px;
+  padding: 5px 15px 5px 15px;
+
+  // margin: 1px 0 1px 1px;
 }
           
 // .fa-trash{
@@ -118,19 +165,22 @@ ion-app.md [padding] .scroll-content {
 //   // display: flex;
 // }
 
-// .scoreBox{
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 5px 0;
-// }
+.scores {
+  width: 48px;
+}
 
-// input{
-//   width: 40px;
-// }
+.totalGrey {
+  background-color: #cccccc;
+}
+
+.outHoleInfo {
+  display: flex;
+  justify-content: center;
+}
 
 .holeInput{
-  border: 1px solid black;
+  border: 1px solid dimgrey;
   width: 48px;
-  height: 60px;
+  height: 32px;
+  background-color: #e8eaef;
 }
