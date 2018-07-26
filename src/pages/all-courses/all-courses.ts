@@ -4,13 +4,6 @@ import { AllTeesPage } from '../all-tees/all-tees';
 import { Component } from '@angular/core';
 import {CoursesApiService} from "../../services/courses-api.service";
 
-/**
- * Generated class for the CoursesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-all-courses',
